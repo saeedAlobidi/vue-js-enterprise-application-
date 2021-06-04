@@ -22,10 +22,10 @@
 	2-vue.JS <br />
     3-vuex <br />
     4-vue-router <br />
-     5-axios <br />
-	4-mssql <br />
-	5-test-utils <br /> 
-	8-git clone  <br />
+    5-axios <br />
+	
+	6-test-utils <br /> 
+	7-git clone  <br />
  <br />
 <b>c-start install</b>  <br />
 npm i <br />
