@@ -1,5 +1,11 @@
 <template>
   <div class="home">
+
+  <button   type="button" @click="changeLang">{{lang}}</button>
+
+    <br/><br/><br/>
+    <h1>{{$t('hello')}}</h1>
+    <br/><br/><br/>
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     static data
     <br />
@@ -37,7 +43,7 @@ export default {
   
  },
   data() {
-    return { isActive: false };
+    return { isActive: false,lang:'ar' };
   },
   computed: {
     ...mapState({
@@ -52,7 +58,16 @@ export default {
       user.user.updateUser({handler:() => {
         this.isActive = false;
       }});
+    },
+
+    changeLang(){
+    
+    let lan=this.$root.$i18n.locale=='en'?'ar':'en';
+    this.$root.$i18n.locale=lan;
+    this.lang=lan=='en'?'ar':'en';
     }
+
+
   }
 };
 </script>

@@ -17,17 +17,18 @@
  
  <br />
 
-<b>b-Prerequisites</b><br/>
-    1-Git <br/>
-    2-vue.JS <br/>
-    3-vuex <br/>
-   4-vue-router <br/>
-   5-axios <br/>
-   6-test-utils <br/>
-   7-git clone  <br/>
+<b>b-Prerequisites</b> <br />
+	1-Git <br />
+	2-vue.JS <br />
+    3-vuex <br />
+    4-vue-router <br />
+     5-axios <br />
+	4-mssql <br />
+	5-test-utils <br /> 
+	8-git clone  <br />
  <br />
 <b>c-start install</b>  <br />
-npm i <br/>
+npm i <br />
  <br />
  <br />
 <b>d-Start test </b><br />
