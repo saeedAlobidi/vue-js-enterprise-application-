@@ -1,8 +1,9 @@
 import axios from 'axios'
 import progress from 'nprogress'
+import events from '../core/globalEvent'
 
 
-export default ({ publicToken}) => {
+export default ({ publicToken }) => {
 
 
     const apiClient = axios.create({
@@ -15,28 +16,33 @@ export default ({ publicToken}) => {
         }
     });
 
-    apiClient.interceptors.request.use(function (config) {
-        !progress.isStarted()?progress.start():progress.isStarted()
-        
+    apiClient.interceptors.request.use(function (req) {
 
-        const publicToken=window.sessionStorage.getItem("X-P-T");
-        const userToken=window.sessionStorage.getItem("X-U-T");
-        config.headers['X-P-T'] = publicToken==null?"not authorized :(":publicToken;
-         config.headers['X-U-T'] = userToken==null?"not authentication :(":userToken;
-        return config;
+        status =  events.api_interceptors_request_begin(req);
+
+        !progress.isStarted() ? progress.start() : false
+
+         const userToken = window.sessionStorage.getItem("X-U-T");
+
+         req.headers['X-U-T'] = userToken == null ? "not authentication :(" : userToken;
+
+        status =  events.api_interceptors_request_end(req);
+        return req;
     });
 
 
 
     apiClient.interceptors.response.use(function (response) {
-        
-        progress.isStarted()?progress.done():progress.isStarted()
 
-        const publicToken=response.headers['X-P-T'];
-        const userToken=response.headers['X-U-T'];
-        window.sessionStorage.setItem("X-P-T", publicToken==null?"not authentication :(":publicToken);
-        window.sessionStorage.setItem("X-U-T", userToken==null?"not authentication :(":userToken);
+        status =  events.api_interceptors_response_begin(response);
 
+        progress.isStarted() ? progress.done() : progress.isStarted()
+
+         const userToken = response.headers['X-U-T'];
+
+         window.sessionStorage.setItem("X-U-T", userToken == null ? "not authentication :(" : userToken);
+
+        status =  events.api_interceptors_response_end(response);
         return response;
     });
 

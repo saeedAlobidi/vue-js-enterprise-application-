@@ -3,7 +3,7 @@ export default ({storageKey,encryptionToken,CryptoAES,storageType} )=> {
    return ( reducer)=>
     { 
       
-      return  new VuexPersistence({
+      return new VuexPersistence({
          storage: {
             getItem: () => {
                const store = window.localStorage.getItem(storageKey);

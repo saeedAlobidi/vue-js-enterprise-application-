@@ -5,10 +5,10 @@ import Home from '@/views/views/Home.vue'
 import NotFoumd from '@/views/views/NotFoumd.vue'
 import NetWorkError from '@/views/views/NetWorkError.vue'
 import services from '@/domain/services'
-
-Vue.use(VueRouter)
-
-export default (progress) => {
+import event from '../domain/core/globalEvent'
+import { finished } from 'stream'
+ Vue.use(VueRouter)
+ export default (progress) => {
 
   const routes = [
     {
@@ -53,10 +53,12 @@ export default (progress) => {
 
   router.beforeEach((routeTo, routeFrom, next) => {
     progress.start();
-    next();
+    event.route_before_each(routeTo, routeFrom)?
+    next():false;
 
   });
   router.afterEach(() => {
+    event.route_after_each()
     progress.done()
 
   });

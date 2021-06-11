@@ -8,7 +8,7 @@ function asyncHandler(callback) {
         try {
             await callback(object);
         } catch (error) {
-            progress.isStarted()?progress.done():progress.isStarted()
+            progress.isStarted()?progress.done():false
 
             object!=undefined?object.handler!=undefined?object.handler():false:false;
             log(error,'Async function')

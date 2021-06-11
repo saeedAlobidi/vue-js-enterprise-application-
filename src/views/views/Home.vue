@@ -15,7 +15,7 @@
     <br />
     <br />
     <br />
-    <button :disabled="isActive" type="button" @click="go">Fetch Data</button>
+    <button id="load" :disabled="isActive" type="button" @click="go">Fetch Data</button>
     <br />
     <br />api data persistence
     <br />
@@ -54,6 +54,7 @@ export default {
 
   methods: {
     go() {
+      
        this.isActive = true;
       user.user.updateUser({handler:() => {
         this.isActive = false;
