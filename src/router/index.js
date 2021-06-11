@@ -1,5 +1,8 @@
-import router from './router'
+import routerEngin from './routerEngin'
+import routes from './router'
 import progress from 'nprogress'
- const _router=router(progress)
+
+
+ const _router=routerEngin({progress,routes})
  
  export default _router;
