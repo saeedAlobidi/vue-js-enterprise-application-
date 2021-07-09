@@ -1,6 +1,7 @@
 
 import { mapState } from "vuex";
 import user from "@/domain/usecase";
+import   doctorjs from '../Core/example'
 
 
 let brain= {
