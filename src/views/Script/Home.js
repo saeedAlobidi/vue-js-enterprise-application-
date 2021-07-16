@@ -28,7 +28,10 @@ let brain= {
   computed: {
     ...mapState({
       user: state => state.user.user,
-      employes: state => state.employes.user
+     
+      employes: state => state.employes.user,
+      saeed: state => state.employes.saeed,
+      n: state => state.employes.n
     })
   },
 
