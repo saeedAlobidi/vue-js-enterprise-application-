@@ -33,6 +33,6 @@
 </template>
 
 <script>
-import js from "./home";
+import js from "./Home";
 export default js;
 </script>
