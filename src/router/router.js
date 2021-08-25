@@ -1,7 +1,7 @@
 
 import Home from '@/views/views/home/Home.vue'
-import NotFoumd from '@/views/views/notFoumd/NotFoumd.vue'
-import NetWorkError from '@/views/views/netWorkError/NetWorkError.vue'
+import NotFoumd from '@/views/views/notFound/NotFound.vue'
+import NetWorkError from '@/views/views/error/Error.vue'
 
 export default [
     {
