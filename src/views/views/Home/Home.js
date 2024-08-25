@@ -37,8 +37,10 @@ let brain = {
 
     changeLang() {
       this.lang = this.$root.$i18n.locale = this.$root.$i18n.locale == 'en' ? 'ar' : 'en'
-    }
+    },
+    callCustomPlugin: () => this.$myMethod("hi this is saeed ^_^"),
 
+    
 
 
 

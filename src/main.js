@@ -5,11 +5,14 @@ import VueI18n from "vue-i18n";
 import router from './router'
 import store from '@/infrastructure/store'
 import services from '@/infrastructure/services'
+import myPlugin from './Plugin/myPlugin';
 import 'nprogress/nprogress.css'
 import messages from "../src/assets/locales"
 Vue.config.productionTip = false
 /* end package  import  */
 
+// add custom plugin
+Vue.use(MyPlugin);
 
 /* start localiztionation */
 Vue.use(VueI18n);

@@ -18,7 +18,10 @@
     <br />
     <br />
     <br />
+    
     <button id="load" :disabled="isActive" type="button" @click="go">Fetch Data</button>
+    <br/>
+    <button id="load" :disabled="isActive" type="button" @click="callCustomPlugin">call Custom Plugin</button>
     <br />
     <br />api data persistence
     <br />
